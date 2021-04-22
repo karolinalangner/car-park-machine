@@ -99,7 +99,6 @@ class CarparkMachine
         else 
             n.split(/[^\d]/).join.to_f / 100.00
         end
-        }.sum
-        
+        }.sum    
     end
 end
