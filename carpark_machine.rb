@@ -7,7 +7,7 @@ class CarparkMachine
     def initialize(time_in, time_out)
         @time_in = Time.parse(time_in)
         @time_out = Time.parse(time_out)
-        @stay = calulate_stay
+        @stay = calculate_stay
         @balance = []
     end
 
@@ -63,20 +63,20 @@ class CarparkMachine
                 if denomination <= 100
                     coins_beautified << beautify_change(denomination)
                 else
-                    notes_beutified << beautify_change(denomination)
+                    notes_beautified << beautify_change(denomination)
                 end             
             end
             if notes_beutified.empty?
                 return "Coins: #{coins_beautified.join(", ")}"
             else
-                return "Notes: #{notes_beutified.join(", ")}. Coins: #{coins_beautified.join(", ")}"  
+                return "Notes: #{notes_beautified.join(", ")}. Coins: #{coins_beautified.join(", ")}"  
             end
         end    
     end
 
     private
 
-    def calulate_stay 
+    def calculate_stay 
         @stay = ((@time_out - @time_in) / 60).to_i
         if @stay < 0
             @stay = 1440 - @stay *(-1)
