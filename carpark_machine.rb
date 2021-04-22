@@ -101,4 +101,5 @@ class CarparkMachine
         end
         }.sum    
     end
+    
 end
